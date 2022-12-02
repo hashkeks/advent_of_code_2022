@@ -16,7 +16,10 @@ def feed(input_data):
 			counter += 1
 	return cal_list	
 
-def get_max(lst):
+cal_list = feed(input_data)
+
+# for part one
+def get_max_cal(lst):
 	current = lst[0]
 
 	for entry in lst:
@@ -24,7 +27,29 @@ def get_max(lst):
 			current = entry
 	return current
 
+# for part two
+def get_top_three_total_cal(lst):
+	first = lst[0]
+	second = lst[1]
+	third = lst[2]
 
-		
-print(get_max(feed(input_data)))
+	for entry in lst:
+		if entry > first:
+			third = second
+			second = first
+			first = entry
+		elif entry > second:
+			third = second
+			second = entry
+		elif entry > third:
+			third = entry
+
+	print(first)
+	print(second)
+	print(third)
+	return (first + second + third)
+	
+print("Solution for part one: " + str(get_max_cal(cal_list)))
+print("\nSolution for part two: " + str(get_top_three_total_cal(cal_list)))
+
 
