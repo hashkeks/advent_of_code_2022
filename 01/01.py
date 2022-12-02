@@ -1,6 +1,6 @@
 #!/bin/python
 
-with open("input") as file:
+with open("input", "r") as file:
 	input_data = file.readlines()
 
 def feed(input_data):
