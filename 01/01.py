@@ -44,9 +44,6 @@ def get_top_three_total_cal(lst):
 		elif entry > third:
 			third = entry
 
-	print(first)
-	print(second)
-	print(third)
 	return (first + second + third)
 	
 print("Solution for part one: " + str(get_max_cal(cal_list)))
